@@ -1,0 +1,23 @@
+{
+  "name": "testing-lib",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/material": "^8.2.3",
+    "@angular/cdk": "~8.2.3"
+  },
+  "main": "bundles/testing-lib.umd.js",
+  "module": "fesm5/testing-lib.js",
+  "es2015": "fesm2015/testing-lib.js",
+  "esm5": "esm5/testing-lib.js",
+  "esm2015": "esm2015/testing-lib.js",
+  "fesm5": "fesm5/testing-lib.js",
+  "fesm2015": "fesm2015/testing-lib.js",
+  "typings": "testing-lib.d.ts",
+  "metadata": "testing-lib.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
