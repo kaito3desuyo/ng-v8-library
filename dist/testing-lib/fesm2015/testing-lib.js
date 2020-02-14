@@ -1,4 +1,5 @@
 import { Injectable, ɵɵdefineInjectable, Component, NgModule } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 /**
@@ -20,15 +21,51 @@ TestingLibService.ctorParameters = () => [];
 
 /**
  * @fileoverview added by tsickle
- * Generated from: lib/testing-lib.component.ts
+ * Generated from: lib/testing-dialog/testing-dialog.component.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class TestingLibComponent {
+class TestingDialogComponent {
     constructor() { }
     /**
      * @return {?}
      */
+    ngOnInit() {
+    }
+}
+TestingDialogComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'lib-testing-dialog',
+                template: "<p>\n  testing-dialog works!\n</p>\n",
+                styles: [""]
+            }] }
+];
+/** @nocollapse */
+TestingDialogComponent.ctorParameters = () => [];
+
+/**
+ * @fileoverview added by tsickle
+ * Generated from: lib/testing-lib.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class TestingLibComponent {
+    /**
+     * @param {?} dialog
+     */
+    constructor(dialog) {
+        this.dialog = dialog;
+    }
+    /**
+     * @return {?}
+     */
     ngOnInit() { }
+    /**
+     * @return {?}
+     */
+    openDialog() {
+        this.dialog.open(TestingDialogComponent, {
+            data: {}
+        });
+    }
 }
 TestingLibComponent.decorators = [
     { type: Component, args: [{
@@ -37,14 +74,23 @@ TestingLibComponent.decorators = [
     <p>
       testing-lib works!
     </p>
-    <button mat-raised-button>
+    <button mat-raised-button (click)="openDialog()">
       Click
     </button>
   `
             }] }
 ];
 /** @nocollapse */
-TestingLibComponent.ctorParameters = () => [];
+TestingLibComponent.ctorParameters = () => [
+    { type: MatDialog }
+];
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TestingLibComponent.prototype.dialog;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -55,8 +101,9 @@ class TestingLibModule {
 }
 TestingLibModule.decorators = [
     { type: NgModule, args: [{
-                declarations: [TestingLibComponent],
-                imports: [MatButtonModule],
+                declarations: [TestingLibComponent, TestingDialogComponent],
+                entryComponents: [TestingDialogComponent],
+                imports: [MatButtonModule, MatDialogModule],
                 exports: [TestingLibComponent]
             },] }
 ];
@@ -73,5 +120,5 @@ TestingLibModule.decorators = [
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { TestingLibComponent, TestingLibModule, TestingLibService };
+export { TestingLibComponent, TestingLibModule, TestingLibService, TestingDialogComponent as ɵa };
 //# sourceMappingURL=testing-lib.js.map

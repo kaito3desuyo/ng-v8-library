@@ -1,4 +1,5 @@
 import { Injectable, ɵɵdefineInjectable, Component, NgModule } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 /**
@@ -22,11 +23,40 @@ var TestingLibService = /** @class */ (function () {
 
 /**
  * @fileoverview added by tsickle
+ * Generated from: lib/testing-dialog/testing-dialog.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+var TestingDialogComponent = /** @class */ (function () {
+    function TestingDialogComponent() {
+    }
+    /**
+     * @return {?}
+     */
+    TestingDialogComponent.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+    };
+    TestingDialogComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'lib-testing-dialog',
+                    template: "<p>\n  testing-dialog works!\n</p>\n",
+                    styles: [""]
+                }] }
+    ];
+    /** @nocollapse */
+    TestingDialogComponent.ctorParameters = function () { return []; };
+    return TestingDialogComponent;
+}());
+
+/**
+ * @fileoverview added by tsickle
  * Generated from: lib/testing-lib.component.ts
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TestingLibComponent = /** @class */ (function () {
-    function TestingLibComponent() {
+    function TestingLibComponent(dialog) {
+        this.dialog = dialog;
     }
     /**
      * @return {?}
@@ -35,16 +65,36 @@ var TestingLibComponent = /** @class */ (function () {
      * @return {?}
      */
     function () { };
+    /**
+     * @return {?}
+     */
+    TestingLibComponent.prototype.openDialog = /**
+     * @return {?}
+     */
+    function () {
+        this.dialog.open(TestingDialogComponent, {
+            data: {}
+        });
+    };
     TestingLibComponent.decorators = [
         { type: Component, args: [{
                     selector: "lib-testing-lib",
-                    template: "\n    <p>\n      testing-lib works!\n    </p>\n    <button mat-raised-button>\n      Click\n    </button>\n  "
+                    template: "\n    <p>\n      testing-lib works!\n    </p>\n    <button mat-raised-button (click)=\"openDialog()\">\n      Click\n    </button>\n  "
                 }] }
     ];
     /** @nocollapse */
-    TestingLibComponent.ctorParameters = function () { return []; };
+    TestingLibComponent.ctorParameters = function () { return [
+        { type: MatDialog }
+    ]; };
     return TestingLibComponent;
 }());
+if (false) {
+    /**
+     * @type {?}
+     * @private
+     */
+    TestingLibComponent.prototype.dialog;
+}
 
 /**
  * @fileoverview added by tsickle
@@ -56,8 +106,9 @@ var TestingLibModule = /** @class */ (function () {
     }
     TestingLibModule.decorators = [
         { type: NgModule, args: [{
-                    declarations: [TestingLibComponent],
-                    imports: [MatButtonModule],
+                    declarations: [TestingLibComponent, TestingDialogComponent],
+                    entryComponents: [TestingDialogComponent],
+                    imports: [MatButtonModule, MatDialogModule],
                     exports: [TestingLibComponent]
                 },] }
     ];
@@ -76,5 +127,5 @@ var TestingLibModule = /** @class */ (function () {
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { TestingLibComponent, TestingLibModule, TestingLibService };
+export { TestingLibComponent, TestingLibModule, TestingLibService, TestingDialogComponent as ɵa };
 //# sourceMappingURL=testing-lib.js.map
