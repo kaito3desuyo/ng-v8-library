@@ -1,5 +1,5 @@
 import { Injectable, ɵɵdefineInjectable, Component, NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
 
 /**
  * @fileoverview added by tsickle

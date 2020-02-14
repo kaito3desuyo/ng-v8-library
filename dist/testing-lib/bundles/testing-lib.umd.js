@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/material')) :
-    typeof define === 'function' && define.amd ? define('testing-lib', ['exports', '@angular/core', '@angular/material'], factory) :
-    (global = global || self, factory(global['testing-lib'] = {}, global.ng.core, global.ng.material));
-}(this, (function (exports, core, material) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/material/button')) :
+    typeof define === 'function' && define.amd ? define('testing-lib', ['exports', '@angular/core', '@angular/material/button'], factory) :
+    (global = global || self, factory(global['testing-lib'] = {}, global.ng.core, global.ng.material.button));
+}(this, (function (exports, core, button) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
@@ -60,7 +60,7 @@
         TestingLibModule.decorators = [
             { type: core.NgModule, args: [{
                         declarations: [TestingLibComponent],
-                        imports: [material.MatButtonModule],
+                        imports: [button.MatButtonModule],
                         exports: [TestingLibComponent]
                     },] }
         ];
